@@ -19,6 +19,6 @@ end
   end
  private
  def list_params
-   params.require(:list).parmit(:title, :body)
+   params.require(:list).parmit(:title, :body, :image)
  end
 end
