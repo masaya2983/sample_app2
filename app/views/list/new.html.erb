@@ -1,5 +1,13 @@
 <table>
 <h1>新規投稿</h1>
+<% if @list errors any? %>
+<% = @list .errorscount %>件のエラーが発生しました
+<ul>
+   <% @list.error.full_mesages.each do |message|  %>
+   <li><%= message %></li>
+   <% end %>
+</ul>
+<% end %>
 <%= form_with model :@list,url:'/list'method:  :post do |f|  %>
 <h4>タイトル</h4>
 <%= f.text_field :title %>
